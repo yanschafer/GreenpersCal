@@ -1,5 +1,10 @@
 # cal
 
+## Токен
+```
+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
+```
+
 ## Project setup
 ```
 npm install
