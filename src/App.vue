@@ -7,4 +7,9 @@ html,body {
   flex-direction: column;
   align-items: center;
 }
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

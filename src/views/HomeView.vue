@@ -1,14 +1,14 @@
 <template>
   <img class="logo" src="@/assets/logo.png">
   <div class="container cal-body" v-if="loaded">
-    <div class="row">
-      <div class="col">
+    <div class="row month-nav-row">
+      <div class="col-2">
         <button class="btn btn-nav btn-nav-disabled" @click="prevMonth"><i class="fa-solid fa-chevron-left"></i></button>
       </div>
-      <div class="col">
+      <div class="col-8">
         <h5 class="month">{{ month }} ({{ yearNum }})</h5>
       </div>
-      <div class="col">
+      <div class="col-2">
         <button class="btn btn-nav btn-nav-disabled" @click="nextMonth"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </div>
@@ -227,6 +227,9 @@ export default {
 </script>
 
 <style>
+.month-nav-row {
+  width: 100%;
+}
 .btn-nav {
   max-width: 10vw;
   color: white;
@@ -413,6 +416,7 @@ export default {
   padding: 0;
   width: 3rem;
   font-weight: 700;
+  font-size: 1rem;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -423,13 +427,13 @@ export default {
   font-weight: 700;
 }
 .cal-body {
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   background: #ffffff;
   box-shadow:  20px 20px 60px #d9d9d9,
   -20px -20px 60px #ffffff;
   padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 90vw;
   padding-bottom: 0.3rem;
   display: flex;
@@ -438,7 +442,7 @@ export default {
   flex-direction: column;
 }
 .items {
-  display: grid;
+  display: inline-grid;
   height: 33vh;
   width: 100%;
   padding: 0;

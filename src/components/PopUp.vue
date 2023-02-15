@@ -21,6 +21,8 @@ export default {
 }
 .popup-row {
   position: fixed;
+  display: flex;
+  justify-content: center;
   top: 0;
   margin-bottom: 2rem;
   width: 100%;
@@ -33,11 +35,13 @@ export default {
   padding-top: 1.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  width: 90vw;
+  width: 95vw;
   padding-bottom: 0.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
 }
 </style>
