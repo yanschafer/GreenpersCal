@@ -8,7 +8,7 @@
 export default {
   name: "CalendarItem",
   props: {
-    label: String,
+    label: Number,
     type: String
   }
 }
@@ -27,20 +27,24 @@ export default {
   background: transparent;
   font-weight: 600;
   padding: 0;
+  cursor: pointer;
 }
 .day {
   background: #619fa8;
   color: white;
   padding: 0;
+  cursor: pointer;
 }
 .night {
   background: #283b42;
   color: white;
   padding: 0;
+  cursor: pointer;
 }
 .disabled {
   opacity: 0.3;
   padding: 0;
+  cursor: default;
 }
 .number {
   margin: 0;
