@@ -2,9 +2,15 @@
   <img class="logo" src="@/assets/logo.png">
   <div class="container cal-body" v-if="loaded">
     <div class="row">
-      <button class="col" @click="prevMonth">{{ "<-" }}</button>
-      <h5 class="month col">{{ month }} ({{ yearNum }})</h5>
-      <button class="col" @click="nextMonth">{{ "->" }}</button>
+      <div class="col">
+        <button class="btn btn-nav btn-nav-disabled" @click="prevMonth"><i class="fa-solid fa-chevron-left"></i></button>
+      </div>
+      <div class="col">
+        <h5 class="month">{{ month }} ({{ yearNum }})</h5>
+      </div>
+      <div class="col">
+        <button class="btn btn-nav btn-nav-disabled" @click="nextMonth"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
     </div>
 
     <div class="row weekdays-row">
@@ -36,6 +42,7 @@
       <button type="button" @click="save" class="btn btn-primary">Сохранить</button>
     </div>
   </div>
+  <PopUp />
 </template>
 
 <script>
@@ -47,10 +54,12 @@
 
 import CalendarItem from "@/components/CalendarItem.vue";
 import {Api} from "@/api/Api";
+import PopUp from "@/components/PopUp.vue";
 
 export default {
   name: 'HomeView',
   components: {
+    PopUp,
     CalendarItem
   },
   data() {
@@ -218,6 +227,23 @@ export default {
 </script>
 
 <style>
+.btn-nav {
+  max-width: 10vw;
+  color: white;
+  border-radius: 50%;
+  padding: 0;
+  width: 2rem!important;
+  height: 2rem;
+}
+.btn-nav-disabled {
+  max-width: 10vw;
+  color: white;
+  border-radius: 50%;
+  padding: 0;
+  width: 2rem!important;
+  height: 2rem;
+  opacity: 0.3;
+}
 .legend-row {
   display: flex;
   width: 100%;
@@ -285,6 +311,12 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.legend-day-active {
+  background: transparent;
+  border: 1px solid #619fa8;
+  color: #619fa8;
+  transition: all 1s ease
+}
 .legend-day:hover {
   background: transparent;
   border: 1px solid #619fa8;
@@ -297,6 +329,7 @@ export default {
   color: #619fa8;
   transition: all 1s ease
 }
+
 .legend-day:focus-within {
   background: transparent;
   border: 1px solid #619fa8;
@@ -323,6 +356,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.legend-night-active {
+  background: transparent;
+  border: 1px solid #283b42;
+  color: #283b42;
+  transition: all 1s ease
 }
 .legend-night:hover {
   background: transparent;
